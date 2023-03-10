@@ -1,0 +1,9 @@
+x1= int(input('Unesite x koordinatu prve točke'))
+y1=int(input('Unesite y koordinatu prve točke'))
+x2=int(input('Unesite x koordinatu druge točke'))
+y2=int(input('Unesite y koordinatu druge točke'))
+x='x'
+k=(y2 - y1)/(x2 - x1)
+n=-k*x1+y1
+y=str(k)+str(x)+'-'+str(n)
+print(y)
