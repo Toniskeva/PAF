@@ -1,9 +1,20 @@
-x1= int(input('Unesite x koordinatu prve točke'))
-y1=int(input('Unesite y koordinatu prve točke'))
-x2=int(input('Unesite x koordinatu druge točke'))
-y2=int(input('Unesite y koordinatu druge točke'))
-x='x'
-k=(y2 - y1)/(x2 - x1)
-n=-k*x1+y1
-y=str(k)+str(x)+'-'+str(n)
-print(y)
+x1=float(input('Unesite x koordinatu prve točke'))
+y1=float(input('Unesite y koordinatu prve točke'))
+x2=float(input('Unesite x koordinatu druge točke'))
+y2=float(input('Unesite y koordinatu druge točke'))
+t1=(x1,y1)
+t2=(x2,y2)
+if not t1==t2:
+    k=(y2 - y1)/(x2 - x1)
+    n=-k*x1+y1
+    if n<0:
+        y= str(k)+'x'+str(n)
+        print(y)
+    if n>0:
+        y=str(k)+'x'+'+'+str(n)
+        print(y)
+    if n==0:
+        y=str(k)+'x'
+        print(y)
+else:
+    print('Unijeli ste koordinate istih točaka, unesite ponovno.')
