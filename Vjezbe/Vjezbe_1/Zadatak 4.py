@@ -1,6 +1,6 @@
-def funkcija(x1,y1,x2,y2):
-    t1=(x1,y1)
-    t2=(x2,y2)
+def funkcija(t1,t2):
+    x1,y1=t1
+    x2,y2=t2
     if not t1==t2:
         k=(y2 - y1)/(x2 - x1)
         n=-k*x1+y1
@@ -15,4 +15,4 @@ def funkcija(x1,y1,x2,y2):
             print(y)
     else:
         print('Unijeli ste koordinate istih točaka, unesite ponovno.')
-funkcija(2,2,3,5)
+funkcija((2,2),(5,5))

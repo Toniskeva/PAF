@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def funkcija(x1,y1,x2,y2):
-    t1=(x1,y1)
-    t2=(x2,y2)
+def funkcija(t1,t2):
+    x1,y1=t1
+    x2,y2=t2
     if not t1==t2:
         k=(y2 - y1)/(x2 - x1)
         n=-k*x1+y1
@@ -36,5 +36,4 @@ def funkcija(x1,y1,x2,y2):
         fig.savefig(i)
     if t1==t2:
         print('Unijeli ste koordinate istih točaka, unesite ponovno.')
-funkcija(0,5,2,10)
-
+funkcija((0,5),(2,10))
