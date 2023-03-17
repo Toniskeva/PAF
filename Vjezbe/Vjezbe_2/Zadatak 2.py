@@ -22,8 +22,6 @@ while t<=9.99:
     vx=vx
     x=x+vx*dt
     lista_x.append(x)
-    if y<0:
-        break
 listat=np.asarray(lista_t)
 listay=np.asarray(lista_y)
 listax=np.asarray(lista_x)
