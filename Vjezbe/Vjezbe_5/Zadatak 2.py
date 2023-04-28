@@ -22,18 +22,20 @@ for i in xlista:
     f_lista.append(d_kubna(i))
     h_lista.append(d_trigonometrijska(i))
 
-plt.plot(xlista,f_lista,label='3*x^2')
+plt.plot(xlista,f_lista,label='Analitičko rješenje')
 for i in list(np.arange(0.1,10,1)):
-    plt.plot(cal.derivacija(f,-5,5,100,i)[0],cal.derivacija(f,-5,5,100,i)[1], label=i)
+    plt.plot(cal.derivacija(f,-5,5,100,i)[0],cal.derivacija(f,-5,5,100,i)[1], label='3step, e={}'.format(i))
+plt.plot(cal.derivacija(f,-5,5,100,0.1,'2step')[0],cal.derivacija(f,-5,5,100,0.1,'2step')[1],'r-.',label='2step, e=0.1')
 plt.xlabel('x')
 plt.ylabel('d(x^3)/dx')
 plt.title('Numeričko deriviranje')
 plt.legend()
 plt.show()
 
-plt.plot(xlista,h_lista,label='-sin(x)')
+plt.plot(xlista,h_lista,label='Analitičko rješenje')
 for i in list(np.arange(0.1,10,1)):
-    plt.plot(cal.derivacija(h,-5,5,100,i)[0],cal.derivacija(h,-5,5,100,i)[1],label=i)
+    plt.plot(cal.derivacija(h,-5,5,100,i)[0],cal.derivacija(h,-5,5,100,i)[1], label='3step, e={}'.format(i))
+plt.plot(cal.derivacija(h,-5,5,100,0.1,'2step')[0],cal.derivacija(h,-5,5,100,0.1,'2step')[1],'r-.',label='2step, e=0.1')
 plt.xlabel('x')
 plt.ylabel('d(cos(x))/dx')
 plt.title('Numeričko deriviranje')
