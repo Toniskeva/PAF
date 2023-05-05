@@ -31,7 +31,7 @@ class Projectile:
             self.__move(dt,P,C)
             x_lista.append(self.x)
             y_lista.append(self.y)
-        plt.plot(x_lista,y_lista, label='dt={}'.format(dt))
+        plt.plot(x_lista,y_lista, label='Euler metoda, dt={}'.format(dt))
         self.reset()
     def __runge_kutta(self,dt,P,C):
         if self.vx>0:

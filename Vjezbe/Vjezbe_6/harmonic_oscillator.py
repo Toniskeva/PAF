@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import math
 
 class HarmonicOscillator:
     def __init__(self,m,k,v0,x0):
@@ -71,6 +72,14 @@ class HarmonicOscillator:
         #print(vrijeme[:2*z+1]) - Da se obuhvati početni i krajnji trenutak promjene predznaka, 2*z+1
         self.reset()
         return vrijeme[:2*z+1],polozaj[:2*z+1],s
+    def analiticko(self):
+        t=np.linspace(0,2*np.pi*math.sqrt(self.m/self.k),1000)
+        Y=[]
+        A=self.v/(math.sqrt(self.k/self.m))
+        for i in t:
+            y=A*np.sin((math.sqrt(self.k/self.m))*i)
+            Y.append(y)
+        plt.plot(t,Y, label='Analitički period',color='r')
     def graf_period(self,dt):
-        plt.plot(self.period(dt)[0],self.period(dt)[1], label='dt={}, T={}'.format(dt,self.period(dt)[2]))
+        plt.scatter(self.period(dt)[0],self.period(dt)[1], label='dt={}, T={}'.format(dt,self.period(dt)[2]),s=8)
         self.reset()
