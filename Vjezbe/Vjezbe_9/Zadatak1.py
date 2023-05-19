@@ -34,6 +34,9 @@ class Gravitacija:
         plt.scatter(0,0,c='yellow',label='Sun')
         plt.plot(lista_x,lista_y,'b',label='Earth')
         plt.plot(lista_xs,lista_ys,'r',label='Sun trajectory')
+        plt.xlabel('x[m]')
+        plt.ylabel('y[m]')
+        plt.title('Sun-Eart system')
         plt.legend()
         plt.show()
 
