@@ -36,7 +36,7 @@ class Gravitacija:
         plt.plot(lista_xs,lista_ys,'r',label='Sun trajectory')
         plt.xlabel('x[m]')
         plt.ylabel('y[m]')
-        plt.title('Sun-Eart system')
+        plt.title('Sun-Earth system')
         plt.legend()
         plt.show()
 
